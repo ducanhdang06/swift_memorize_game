@@ -24,12 +24,18 @@ struct MemoryGame <CardContent> {
         }
     }
     
+    // any function that is changing the model has to mark mutating
+    mutating func shuffle() {
+        cards.shuffle()
+        print(cards)
+    }
+    
     func choose(_ card: Card){
         
     }
     
     struct Card {
-        var isFaceUp = false
+        var isFaceUp = true
         var isMatched = false
         let content: CardContent // dont care types (it can be anything)
     }
